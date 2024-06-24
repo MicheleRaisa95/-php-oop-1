@@ -37,6 +37,17 @@
         return "Title: " . $this->title . ", Director: " . $this->director . ", Year: " . $this->year . ", Genre: " . $this->genre;
     }
 }
+
+// Istanziamento di due oggetti Movie e stampa delle proprietà
+try {
+    $movie1 = new Movie("Inception", "Christopher Nolan", 2010, "Sci-Fi");
+    echo $movie1->getMovieInfo() . "\n";
+
+    $movie2 = new Movie("The Matrix", "The Wachowskis", 1999, "Action");
+    echo $movie2->getMovieInfo() . "\n";
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
         ?>
     </main>
 </body>
