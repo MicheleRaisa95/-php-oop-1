@@ -32,6 +32,10 @@
         $this->year = $year;
         $this->genre = $genre;
     }
+      // Metodo per ottenere le informazioni del film
+    public function getMovieInfo() {
+        return "Title: " . $this->title . ", Director: " . $this->director . ", Year: " . $this->year . ", Genre: " . $this->genre;
+    }
 }
         ?>
     </main>
