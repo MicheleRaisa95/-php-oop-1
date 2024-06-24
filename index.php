@@ -11,7 +11,15 @@
             PHP OPP Movies
         </h1>
         <?php
+        // classe movie
+        class Movie {
+            // variabili dell'istanza
+            public $style;
+            public $director;
+            public $year;
+            public $genere;
 
+}
         ?>
     </main>
 </body>
