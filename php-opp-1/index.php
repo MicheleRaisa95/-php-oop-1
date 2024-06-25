@@ -11,30 +11,66 @@
             PHP OPP Movies
         </h1>
         <?php
+        // class genere
+        class Genere {
+            private $name;
+
+            public function __construct($name) {
+                if (empty($name)) {
+                    throw new Exception("Il nome del genere e obbligatorio");
+                }
+                $this->name = $name;
+            }
+            
+            public function getGenerateName() {
+                return $this->name;
+            }
+            
+        }
+
+        // classe attori
+
+        class Actor {
+            private $name;
+
+            public function __construct($name) {
+                if (empty($name)) {
+                     throw new Exception("Il nome dell'attore è obbligatorio.");
+                }
+                $this->name = $name;
+            }
+            public function getActorName() {
+                return $this->name;
+            }
+            public function setActorName($name) {
+                
+            }
+        }
+
         // classe movie
        class Movie {
     // Variabili d'istanza
-    public $title;
-    public $director;
-    public $year;
-    public $genre;
+    private $title;
+    private $director;
+    private $year;
+    private $genre = [];
 
     // Costruttore
-    public function __construct($title, $director, $year, $genre) {
+    public function __construct($title, $director, $year, $genre = []) {
         if (empty($title) || empty($director) || empty($year) || empty($genre)) {
-            throw new Exception("All fields are required.");
+            throw new Exception("Titolo, regista e anno sono obbligatori.");
         }
         if (!is_numeric($year) || $year < 1888 || $year > intval(date("Y"))) {
-            throw new Exception("Year must be a valid number between 1888 and the current year.");
+            throw new Exception("L'anno deve essere un numero valido tra il 1888 e l'anno corrente.");
         }
         $this->title = $title;
         $this->director = $director;
         $this->year = $year;
-        $this->genre = $genre;
+        $this->genres = $genre;
     }
       // Metodo per ottenere le informazioni del film
     public function getMovieInfo() {
-        return "Title: " . $this->title . ", Director: " . $this->director . ", Year: " . $this->year . ", Genre: " . $this->genre;
+      $genereNames = arr
     }
 }
 
